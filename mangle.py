@@ -22,7 +22,8 @@ for item in lines:
     if (item.startswith("\"\"\"")):
         in_comment = not in_comment
 
-    if(not item.startswith('#') and not item.startswith("'''") and not in_comment and len(item.strip()) > 0):
+    if (not item.startswith('#') and not item.startswith("'''")
+            and not item.startswith("\"") and not in_comment and len(item.strip()) > 0):
         mangled.write(item.strip() + "\n")
 
 mangled.close()

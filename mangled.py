@@ -25,10 +25,6 @@ self._item_to_prices = {"Ravioli": 12.99, "Lasagne": 11.99, "Macaroni": 10.99, "
 self._menu = menu
 self._name = name
 self._orders = []
-"A class that represents the restaurant's menu"
-"Class representing a restaurant."
-"Class representing an item a customer ordered."
-"Class representing customers of the restaurant"
 code_mangler = Customer()
 code_mangler.order("Lasagne")
 code_mangler.order("Macaroni")
