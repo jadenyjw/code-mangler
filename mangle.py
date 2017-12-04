@@ -14,9 +14,15 @@ if(args.stealer):
 
 lines.sort()
 
+in_comment = False
 mangled = open("mangled.py", "w")
 for item in lines:
-    if(not item.startswith('#')):
+    item = item.strip()
+
+    if (item.startswith("\"\"\"")):
+        in_comment = not in_comment
+
+    if(not item.startswith('#') and not item.startswith("'''") and not in_comment and len(item.strip()) > 0):
         mangled.write(item.strip() + "\n")
 
 mangled.close()
